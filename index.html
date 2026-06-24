@@ -1,249 +1,1388 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ライセンスアカデミー × 進路ナビ</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <main class="brochure" aria-label="ライセンスアカデミーと進路ナビの紹介資料">
-      <span class="corner corner-left">01</span>
-      <span class="corner corner-right">02</span>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>進路ナビの接点設計</title>
+  <style>
+    :root {
+      --navy: #00276f;
+      --blue: #004fae;
+      --blue-2: #2f6ed8;
+      --cyan: #00a0a7;
+      --green: #0c9f94;
+      --purple: #6854b8;
+      --pink: #e95080;
+      --orange: #f47721;
+      --amber: #f4a000;
+      --ink: #12295a;
+      --muted: #42608f;
+      --line: #c8d7ec;
+      --soft-blue: #f4f8ff;
+      --soft-green: #effbf9;
+      --soft-orange: #fff4ec;
+      --soft-yellow: #fff8e5;
+    }
 
-      <section class="left-page">
-        <header class="hero">
-          <p class="brand">ライセンスアカデミー <span>×</span> 進路ナビ</p>
-          <h1>リアルとデジタルの力で、<br />高校生の進路選択を支える。</h1>
-          <p class="hero-copy">
-            ライセンスアカデミーと進路ナビは、<br />
-            リアルとデジタルの両面から高校生の進路選択を支援します。
-          </p>
-        </header>
+    * {
+      box-sizing: border-box;
+    }
 
-        <div class="left-content">
-          <section class="academy-card" aria-labelledby="academy-title">
-            <h2 id="academy-title">LICENSE ACADEMY</h2>
-            <p class="sub-title">リアルの強み</p>
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #edf2f8;
+      color: var(--ink);
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", "Noto Sans JP", sans-serif;
+    }
 
-            <article class="academy-row">
-              <img src="./assets/crops/guidance-classroom.png" alt="教室で行われる進路説明" />
-              <div class="round-icon">
-                <svg viewBox="0 0 48 48" aria-hidden="true">
-                  <path d="M9 40h30M14 40V14h20v26M20 40V26h8v14M18 20h3M27 20h3M18 26h3M27 26h3" />
-                </svg>
-              </div>
-              <div>
-                <h3>全国の高校ネットワーク</h3>
-                <p>全国の高校と強固なネットワークを構築。進路指導の現場と密接に連携しています。</p>
-              </div>
-            </article>
+    body {
+      display: grid;
+      place-items: center;
+      padding: 18px;
+    }
 
-            <article class="academy-row">
-              <img src="./assets/crops/guidance-hall.png" alt="体育館で行われる進路ガイダンス" />
-              <div class="round-icon">
-                <svg viewBox="0 0 48 48" aria-hidden="true">
-                  <path d="M16 20a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM32 20a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM9 39v-6c0-5 4-9 9-9h1M39 39v-6c0-5-4-9-9-9h-1M18 39v-5c0-5 3-8 6-8s6 3 6 8v5" />
-                </svg>
-              </div>
-              <div>
-                <h3>年間多数の進路ガイダンス</h3>
-                <p>全国各地で年間多数の進路ガイダンスを開催。多くの高校生に直接アプローチします。</p>
-              </div>
-            </article>
+    .sheet {
+      position: relative;
+      width: 1191px;
+      height: 794px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(0, 0, 0, 0.07), transparent 5px),
+        linear-gradient(90deg, #fff 0 49.2%, #f9fbff 49.95%, #fff 51.2% 100%);
+      box-shadow: 0 18px 45px rgba(32, 52, 82, 0.16);
+    }
 
-            <article class="academy-row">
-              <img src="./assets/crops/guidance-consult.png" alt="高校生と面談する担当者" />
-              <div class="round-icon">
-                <svg viewBox="0 0 48 48" aria-hidden="true">
-                  <path d="m17 28 7 7c2 2 5 2 7 0l9-9M18 16l-7 7c-2 2-2 5 0 7l5 5M30 16l7 7M16 24l6-6c2-2 5-2 7 0l3 3M22 34l-4 4M27 35l-4 4" />
-                </svg>
-              </div>
-              <div>
-                <h3>先生との信頼関係</h3>
-                <p>長年にわたり先生方との信頼関係を築き、進路指導をサポートしています。</p>
-              </div>
-            </article>
+    .sheet::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 588px;
+      width: 18px;
+      pointer-events: none;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 27, 75, 0.08) 46%,
+        rgba(255, 255, 255, 0.7) 55%,
+        transparent
+      );
+      filter: blur(1px);
+      z-index: 8;
+    }
 
-            <article class="academy-row">
-              <img src="./assets/crops/guidance-writing.png" alt="資料に記入する手元" />
-              <div class="round-icon">
-                <svg viewBox="0 0 48 48" aria-hidden="true">
-                  <path d="M14 7h20v34H14zM19 15h10M19 22h10M19 29h7M31 32l7-7 4 4-7 7-5 1z" />
-                </svg>
-              </div>
-              <div>
-                <h3>進路指導現場との連携</h3>
-                <p>最新の進路情報や入試情報を提供し、高校生の進路選択を支援しています。</p>
-              </div>
-            </article>
+    .corner {
+      position: absolute;
+      top: 0;
+      width: 0;
+      height: 0;
+      z-index: 12;
+    }
 
-            <p class="academy-footer">高校と向き合い、信頼されるリアル接点</p>
-          </section>
+    .corner.left {
+      left: 0;
+      border-top: 56px solid var(--blue);
+      border-right: 56px solid transparent;
+    }
 
-          <section class="bridge-panel" aria-label="リアル接点とデジタル接点の連携">
-            <div class="bridge-orbit" aria-hidden="true"></div>
-            <div class="bridge-bubble blue">
-              <svg viewBox="0 0 48 48" aria-hidden="true">
-                <path d="M16 21a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM32 21a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM8 39v-5c0-6 4-10 10-10h12c6 0 10 4 10 10v5M24 31v8" />
-              </svg>
-              <strong>リアル接点</strong>
-            </div>
-            <div class="bridge-cross">×</div>
-            <div class="bridge-bubble teal">
-              <svg viewBox="0 0 48 48" aria-hidden="true">
-                <path d="M9 9h30v22H9zM16 39h16M24 31v8M16 16h16M16 22h10" />
-              </svg>
-              <strong>デジタル接点</strong>
-            </div>
-            <div class="bridge-arrow" aria-hidden="true"></div>
-            <h2>高校生の進路選択を<br /><span>一気通貫で支援</span></h2>
-            <img class="students" src="./assets/crops/students-city.png" alt="街を背景に歩く高校生" />
-          </section>
+    .corner.right {
+      right: 0;
+      border-top: 56px solid var(--blue);
+      border-left: 56px solid transparent;
+    }
+
+    .page-num {
+      position: absolute;
+      top: 12px;
+      z-index: 13;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .page-num.left {
+      left: 9px;
+    }
+
+    .page-num.right {
+      right: 9px;
+    }
+
+    .title-block {
+      position: absolute;
+      left: 82px;
+      top: 19px;
+      z-index: 10;
+    }
+
+    .kicker {
+      margin: 0 0 4px;
+      color: var(--navy);
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .main-title {
+      margin: 0;
+      color: var(--blue);
+      font-size: 39px;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      position: absolute;
+      left: 82px;
+      top: 105px;
+      width: 520px;
+      margin: 0;
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.85;
+      z-index: 10;
+    }
+
+    .brand {
+      position: absolute;
+      left: 645px;
+      top: 34px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      z-index: 10;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: linear-gradient(145deg, #0b61ce, #003f9c);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 31px;
+      font-weight: 900;
+      line-height: 1;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .brand-mark::before {
+      left: 8px;
+    }
+
+    .brand-mark::after {
+      right: 8px;
+    }
+
+    .brand-name {
+      color: #080808;
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .brand-divider {
+      height: 50px;
+      width: 1px;
+      background: #c5d4ed;
+    }
+
+    .brand-copy {
+      color: var(--blue);
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.45;
+      white-space: nowrap;
+    }
+
+    .side-label {
+      position: absolute;
+      left: 19px;
+      width: 88px;
+      border-radius: 6px;
+      background: linear-gradient(180deg, #0055bb, #003f9a);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-weight: 900;
+      letter-spacing: 0;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
+      z-index: 5;
+    }
+
+    .side-label.process {
+      top: 167px;
+      height: 85px;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .side-label.products {
+      top: 263px;
+      height: 297px;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .side-label.map {
+      top: 572px;
+      height: 121px;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .process-row {
+      position: absolute;
+      left: 119px;
+      top: 167px;
+      width: 1049px;
+      height: 86px;
+      display: grid;
+      grid-template-columns: 1.47fr 1.13fr 1.13fr 1.35fr 1.28fr 1.5fr 1.35fr;
+      gap: 15px;
+      z-index: 4;
+    }
+
+    .step {
+      position: relative;
+      min-width: 0;
+      height: 86px;
+      padding: 10px 10px 8px 11px;
+      border: 1.5px solid var(--line);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.95);
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      column-gap: 8px;
+      align-content: start;
+    }
+
+    .step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -13px;
+      top: 36px;
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 9px solid #7fb0d9;
+    }
+
+    .step-no {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .step h3 {
+      margin: 0 0 5px;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .step p,
+    .step ul {
+      margin: 0;
+      padding: 0;
+      color: var(--ink);
+      font-size: 8px;
+      font-weight: 800;
+      line-height: 1.36;
+    }
+
+    .step ul {
+      list-style: none;
+    }
+
+    .step ul li::before {
+      content: "・";
+    }
+
+    .step .mini-icon {
+      position: absolute;
+      left: 12px;
+      bottom: 8px;
+      margin: 0;
+    }
+
+    .step-copy {
+      grid-column: 2;
+    }
+
+    .c1 { --c: var(--cyan); }
+    .c2 { --c: var(--green); }
+    .c3 { --c: #42a96a; }
+    .c4 { --c: var(--blue-2); }
+    .c5 { --c: var(--purple); }
+    .c6 { --c: var(--pink); }
+    .c7 { --c: var(--orange); }
+    .c1 h3, .c1 .title { color: var(--cyan); }
+    .c2 h3, .c2 .title { color: var(--green); }
+    .c3 h3, .c3 .title { color: #42a96a; }
+    .c4 h3, .c4 .title { color: var(--blue-2); }
+    .c5 h3, .c5 .title { color: var(--purple); }
+    .c6 h3, .c6 .title { color: var(--pink); }
+    .c7 h3, .c7 .title { color: var(--orange); }
+
+    .step-no {
+      background: var(--c);
+    }
+
+    .mini-icon {
+      width: 27px;
+      height: 27px;
+      color: var(--c);
+    }
+
+    .phase {
+      position: absolute;
+      top: 264px;
+      height: 44px;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-weight: 900;
+      z-index: 4;
+    }
+
+    .phase strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .phase span {
+      display: block;
+      margin-top: 4px;
+      font-size: 7.5px;
+      line-height: 1;
+    }
+
+    .phase.green {
+      left: 119px;
+      width: 356px;
+      background: var(--green);
+      clip-path: polygon(0 0, 96% 0, 100% 50%, 96% 100%, 0 100%);
+    }
+
+    .phase.blue {
+      left: 466px;
+      width: 306px;
+      background: var(--blue-2);
+      clip-path: polygon(0 0, 96% 0, 100% 50%, 96% 100%, 0 100%, 4% 50%);
+    }
+
+    .phase.orange {
+      left: 761px;
+      width: 257px;
+      background: var(--orange);
+      clip-path: polygon(0 0, 96% 0, 100% 50%, 96% 100%, 0 100%, 4% 50%);
+    }
+
+    .phase.yellow {
+      left: 1010px;
+      width: 159px;
+      color: #b96800;
+      background: linear-gradient(90deg, #fff4d0, #ffecaa);
+      border: 1px solid #f3d17a;
+    }
+
+    .products-grid {
+      position: absolute;
+      left: 119px;
+      top: 308px;
+      width: 1050px;
+      height: 252px;
+      display: grid;
+      grid-template-columns: 116px 116px 116px 100px 100px 137px 119px 119px 147px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 6px 6px;
+      overflow: hidden;
+      background: #fff;
+      z-index: 3;
+    }
+
+    .product {
+      position: relative;
+      min-width: 0;
+      padding: 11px 9px 8px;
+      border-right: 1px solid var(--line);
+      display: grid;
+      grid-template-rows: 27px 84px 1fr;
+      gap: 6px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .product:nth-child(-n+3) {
+      background: linear-gradient(180deg, #ffffff, #f6fffe);
+    }
+
+    .product:nth-child(n+4):nth-child(-n+6) {
+      background: linear-gradient(180deg, #ffffff, #f7faff);
+    }
+
+    .product.action {
+      padding: 0;
+      grid-template-rows: 127px 125px;
+      gap: 0;
+      background: linear-gradient(180deg, #fff, #fff8f2);
+    }
+
+    .product.last {
+      border-right: 0;
+      grid-column: span 1;
+      grid-template-rows: 118px 1fr;
+      padding: 22px 15px 10px;
+      background: linear-gradient(180deg, #fffdf6, #fff8e4);
+    }
+
+    .product-title {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      min-width: 0;
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    .badge {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+    }
+
+    .badge svg {
+      width: 13px;
+      height: 13px;
+      stroke-width: 2.3;
+    }
+
+    .product p,
+    .stack-card p,
+    .journey p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 8px;
+      font-weight: 800;
+      line-height: 1.55;
+    }
+
+    .visual {
+      display: grid;
+      place-items: center;
+      min-width: 0;
+    }
+
+    .visual.sheetlets {
+      align-items: center;
+    }
+
+    .sheetlet {
+      width: 76px;
+      height: 47px;
+      border: 1px solid #d3dbe9;
+      background: #fff;
+      box-shadow: -7px 6px 0 rgba(203, 215, 236, 0.55), -13px 11px 0 rgba(223, 231, 244, 0.5);
+      display: grid;
+      place-items: center;
+    }
+
+    .pie {
+      position: relative;
+      width: 31px;
+      height: 31px;
+      border-radius: 50%;
+      background: conic-gradient(#e7634f 0 34%, #f4b547 0 58%, #5dbb7f 0 76%, #7192d6 0 100%);
+    }
+
+    .pie::after {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.9;
+    }
+
+    .video-scene {
+      width: 82px;
+      height: 58px;
+      border: 1px solid #cad7e8;
+      background: linear-gradient(#f8fbff 0 42%, #d7eef4 42% 47%, #f6e0b7 47%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-scene::before,
+    .video-scene::after {
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      width: 16px;
+      height: 25px;
+      border-radius: 8px 8px 2px 2px;
+      background: #1f6faf;
+    }
+
+    .video-scene::before {
+      left: 20px;
+      background: linear-gradient(#e8b481 0 30%, #345e97 31%);
+    }
+
+    .video-scene::after {
+      right: 18px;
+      background: linear-gradient(#e9c39a 0 30%, #1b526f 31%);
+    }
+
+    .phone {
+      width: 43px;
+      height: 76px;
+      border: 3px solid #20242d;
+      border-radius: 10px;
+      background: #f9fbff;
+      padding: 7px 5px 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.13);
+    }
+
+    .phone .screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #dce4f0;
+    }
+
+    .phone .screen::before {
+      content: "";
+      display: block;
+      height: 10px;
+      background: var(--line-color, #11a193);
+    }
+
+    .phone-lines {
+      padding: 5px 4px;
+      display: grid;
+      gap: 3px;
+    }
+
+    .phone-lines i {
+      display: block;
+      height: 4px;
+      border-radius: 6px;
+      background: #d9e3f3;
+    }
+
+    .phone-lines i:nth-child(2) {
+      width: 70%;
+    }
+
+    .phone-lines i:nth-child(3) {
+      width: 85%;
+    }
+
+    .radar {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #a5d6c9;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, transparent 0 13px, #dff4ef 14px 15px, transparent 16px),
+        linear-gradient(72deg, transparent 48%, rgba(23, 166, 145, 0.6) 49% 51%, transparent 52%),
+        conic-gradient(from 14deg, rgba(41, 175, 142, 0.32), rgba(111, 192, 96, 0.45), rgba(41, 175, 142, 0.18), rgba(41, 175, 142, 0.32));
+      clip-path: polygon(50% 0, 98% 35%, 80% 100%, 20% 100%, 2% 35%);
+    }
+
+    .search-phone .screen {
+      background: linear-gradient(#fff 0 22%, #eef5ff 22%);
+    }
+
+    .search-phone .photo {
+      width: 26px;
+      height: 15px;
+      margin: 6px auto 4px;
+      background: linear-gradient(#95c3e8 0 45%, #6ab069 46%);
+      border-radius: 2px;
+    }
+
+    .listing-phone .screen {
+      background: #fff;
+    }
+
+    .listing-phone .adline {
+      height: 5px;
+      margin: 5px 4px;
+      border-radius: 3px;
+      background: #2f6ed8;
+    }
+
+    .listing-phone .adline:nth-child(3) {
+      width: 76%;
+      background: #7fa5df;
+    }
+
+    .dual {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .small-phone {
+      width: 33px;
+      height: 59px;
+      border-width: 2px;
+      border-radius: 7px;
+      padding: 5px 4px;
+    }
+
+    .stack-card {
+      min-height: 0;
+      padding: 7px 6px 6px;
+      border-top: 1px solid #ffd0b0;
+      background: rgba(255, 255, 255, 0.72);
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 22px 40px 1fr;
+      gap: 5px;
+    }
+
+    .stack-card:first-of-type {
+      border-top: 0;
+    }
+
+    .stack-card .product-title {
+      font-size: 7.5px;
+      justify-content: center;
+    }
+
+    .stack-card .badge {
+      width: 17px;
+      height: 17px;
+    }
+
+    .stack-card .badge svg {
+      width: 11px;
+      height: 11px;
+    }
+
+    .stack-card p {
+      font-size: 7.2px;
+      line-height: 1.38;
+    }
+
+    .thumb {
+      height: 40px;
+      border: 1px solid #d1dcec;
+      border-radius: 3px;
+      overflow: hidden;
+      background: linear-gradient(#a9d7f5 0 35%, #6db769 35% 65%, #ddc29b 65%);
+      position: relative;
+    }
+
+    .thumb.school::after {
+      content: "";
+      position: absolute;
+      left: 24px;
+      bottom: 3px;
+      width: 43px;
+      height: 18px;
+      background: #e8d9bf;
+      border: 1px solid #a57b4b;
+      box-shadow: 9px -4px 0 #c5b28c;
+    }
+
+    .thumb.live {
+      background: #f5f6fa;
+    }
+
+    .thumb.live::before {
+      content: "LIVE";
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      padding: 2px 4px;
+      border-radius: 3px;
+      color: #fff;
+      background: #eb3f28;
+      font-size: 7px;
+      font-weight: 900;
+    }
+
+    .thumb.live::after {
+      content: "";
+      position: absolute;
+      right: 8px;
+      bottom: 4px;
+      width: 18px;
+      height: 25px;
+      border-radius: 9px 9px 2px 2px;
+      background: linear-gradient(#e8ba91 0 28%, #284c82 29%);
+    }
+
+    .journey {
+      height: 100%;
+      display: grid;
+      grid-template-rows: 98px 1fr;
+      align-items: start;
+      justify-items: center;
+      gap: 4px;
+      text-align: center;
+    }
+
+    .journey-graphic {
+      position: relative;
+      width: 98px;
+      height: 99px;
+    }
+
+    .school-icon {
+      position: absolute;
+      top: 5px;
+      left: 31px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--amber);
+      color: #fff;
+      display: grid;
+      place-items: center;
+    }
+
+    .school-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .journey-graphic::after {
+      content: "";
+      position: absolute;
+      left: 49px;
+      top: 45px;
+      width: 2px;
+      height: 24px;
+      background: var(--amber);
+    }
+
+    .people-icon {
+      position: absolute;
+      left: 22px;
+      top: 67px;
+      color: var(--blue);
+    }
+
+    .people-icon svg {
+      width: 55px;
+      height: 26px;
+    }
+
+    .matrix {
+      position: absolute;
+      left: 119px;
+      top: 572px;
+      width: 1050px;
+      height: 121px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 19px 34px 34px 34px;
+      z-index: 3;
+      background: #fff;
+    }
+
+    .matrix-phases,
+    .matrix-row {
+      display: grid;
+      grid-template-columns: 70px repeat(9, 1fr);
+    }
+
+    .matrix-phases {
+      color: #fff;
+      font-size: 10px;
+      font-weight: 900;
+      text-align: center;
+      line-height: 19px;
+    }
+
+    .matrix-phases .blank {
+      background: #fff;
+      border-right: 1px solid var(--line);
+    }
+
+    .matrix-phases .g {
+      grid-column: span 3;
+      background: var(--green);
+    }
+
+    .matrix-phases .b {
+      grid-column: span 3;
+      background: var(--blue-2);
+    }
+
+    .matrix-phases .o {
+      grid-column: span 2;
+      background: var(--orange);
+    }
+
+    .matrix-phases .y {
+      grid-column: span 1;
+      color: #a96300;
+      background: #f6e0ad;
+    }
+
+    .matrix-row > div {
+      min-width: 0;
+      padding: 6px 4px;
+      border-right: 1px solid var(--line);
+      border-top: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 8px;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .matrix-row > div:last-child {
+      border-right: 0;
+    }
+
+    .row-label {
+      background: #f7fbff;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      flex-wrap: wrap;
+    }
+
+    .tiny {
+      display: inline-flex;
+      align-items: center;
+      gap: 1px;
+      color: var(--ink);
+      font-size: 6.1px;
+      font-weight: 900;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .tiny .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .tiny svg {
+      width: 7.5px;
+      height: 7.5px;
+    }
+
+    .footer {
+      position: absolute;
+      left: 20px;
+      top: 706px;
+      width: 1149px;
+      height: 70px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.88);
+      display: grid;
+      grid-template-columns: 155px 337px 207px 1fr;
+      align-items: center;
+      padding: 0 20px 0 26px;
+      gap: 14px;
+      z-index: 3;
+    }
+
+    .students {
+      align-self: end;
+      height: 68px;
+    }
+
+    .footer-title {
+      color: var(--blue);
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .footer-copy {
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    .check-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 5px;
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      white-space: nowrap;
+    }
+
+    .check {
+      flex: 0 0 auto;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      margin-top: 1px;
+    }
+
+    .check svg {
+      width: 9px;
+      height: 9px;
+      stroke-width: 3;
+    }
+
+    svg {
+      display: block;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .solid {
+      fill: currentColor;
+      stroke: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet" aria-label="進路ナビの接点設計">
+    <div class="corner left"></div>
+    <div class="corner right"></div>
+    <div class="page-num left">03</div>
+    <div class="page-num right">04</div>
+
+    <section class="title-block">
+      <p class="kicker">高校生の進路選択に寄り添う</p>
+      <h1 class="main-title">進路ナビの接点設計</h1>
+    </section>
+
+    <p class="lead">
+      高校生は、いきなり学校を探し始めるわけではありません。<br>
+      将来への興味・関心から自己理解、学校比較、資料請求、オープンキャンパス参加まで。<br>
+      進路ナビは、進路選択のあらゆる段階で高校生と接点を持っています。
+    </p>
+
+    <section class="brand" aria-label="進路ナビ 商品マップ">
+      <div class="brand-mark">N</div>
+      <div class="brand-name">進路ナビ</div>
+      <div class="brand-divider"></div>
+      <div class="brand-copy">高校生の進路行動を支える<br>商品マップ</div>
+    </section>
+
+    <div class="side-label process">高校生の<br>進路行動<br>プロセス</div>
+    <div class="side-label products">進路ナビの<br>接点・商品</div>
+    <div class="side-label map">商品マップ<br>（行動×商品）</div>
+
+    <section class="process-row" aria-label="高校生の進路行動プロセス">
+      <article class="step c1">
+        <div class="step-no">1</div>
+        <div class="step-copy">
+          <h3>将来への不安・興味</h3>
+          <ul>
+            <li>何を学べばいい?</li>
+            <li>どんな仕事が向いている?</li>
+            <li>どの学校を選べばいい?</li>
+          </ul>
         </div>
-      </section>
+        <svg class="mini-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="10" r="6"></circle>
+          <path d="M8 28c1.3-6 14.7-6 16 0"></path>
+          <path d="M24 8c3 1 4 5 2 8"></path>
+          <path d="M6 9c-2 3-1 7 2 9"></path>
+          <path d="M16 18v2"></path>
+        </svg>
+      </article>
 
-      <section class="right-page">
-        <section class="content-tools" aria-labelledby="content-tools-title">
-          <h2 id="content-tools-title">高校現場で活用される進路支援コンテンツ</h2>
-          <div class="tool-grid">
-            <article class="tool-card">
-              <p class="pill">動画で学ぶ進路理解</p>
-              <h3>進路TV</h3>
-              <div class="tool-media">
-                <img src="./assets/crops/shinro-tv.png" alt="進路TVの動画画面" />
-                <img class="qr" src="./assets/crops/shinro-tv-qr.png" alt="進路TVのQRコード" />
-              </div>
-              <p>進学や仕事に関する動画をいつでも視聴できます。</p>
-            </article>
+      <article class="step c2">
+        <div class="step-no">2</div>
+        <div class="step-copy">
+          <h3>情報収集</h3>
+          <p>進路や学問、仕事に<br>関する情報を集める</p>
+        </div>
+        <svg class="mini-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="13" cy="13" r="8"></circle>
+          <path d="M19 19l8 8"></path>
+        </svg>
+      </article>
 
-            <article class="tool-card">
-              <p class="pill">授業や進路指導で活用される教材</p>
-              <h3>分野探究</h3>
-              <div class="tool-media">
-                <img src="./assets/crops/field-study.png" alt="分野探究のワークシート画面" />
-                <img class="qr" src="./assets/crops/field-study-qr.png" alt="分野探究のQRコード" />
-              </div>
-              <p>学問・仕事のつながりを知るワークシート教材。</p>
-            </article>
-          </div>
-          <p class="tools-note">
-            「分野探究」や「進路TV」は、多くの高校の授業や進路指導で活用されています。<br />
-            進路ナビは、広告媒体である前に高校生の進路選択を支える教育プラットフォームです。
-          </p>
-        </section>
+      <article class="step c3">
+        <div class="step-no">3</div>
+        <div class="step-copy">
+          <h3>自己理解</h3>
+          <p>自分の興味・性格・<br>得意分野を知る</p>
+        </div>
+        <svg class="mini-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="10" r="6"></circle>
+          <path d="M7 28c1.5-8 16.5-8 18 0"></path>
+        </svg>
+      </article>
 
-        <section class="shinro-strength" aria-labelledby="shinro-title">
-          <header class="shinro-heading">
-            <div class="navi-logo">N</div>
-            <h2 id="shinro-title">進路ナビ</h2>
-            <p>高校生との継続接点を生み出す<br />4つの強み</p>
-          </header>
+      <article class="step c4">
+        <div class="step-no">4</div>
+        <div class="step-copy">
+          <h3>学校比較</h3>
+          <p>学びたい分野や学校を<br>比較・検討する</p>
+        </div>
+        <svg class="mini-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M5 27V9l7-3 7 3 8-3v21"></path>
+          <path d="M12 6v21M19 9v18"></path>
+          <path d="M8 14h2M8 19h2M15 14h2M15 19h2M22 13h2M22 18h2"></path>
+        </svg>
+      </article>
 
-          <article class="strength-item">
-            <span class="number">01</span>
-            <div class="round-icon">
-              <svg viewBox="0 0 48 48" aria-hidden="true">
-                <path d="M16 21a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM32 21a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM8 39v-5c0-6 4-10 10-10h12c6 0 10 4 10 10v5" />
-              </svg>
-            </div>
-            <div>
-              <h3>圧倒的なユーザー基盤と進路データ</h3>
-              <p>多くの高校生が利用する進路支援プラットフォームとして、進路行動データを蓄積。進学検討層へ効果的なアプローチが可能です。</p>
-            </div>
-          </article>
+      <article class="step c5">
+        <div class="step-no">5</div>
+        <div class="step-copy">
+          <h3>資料請求</h3>
+          <p>気になる学校の<br>資料を取り寄せる</p>
+        </div>
+        <svg class="mini-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M8 4h12l5 5v19H8z"></path>
+          <path d="M20 4v6h6"></path>
+          <path d="M12 16h10M12 21h10"></path>
+        </svg>
+      </article>
 
-          <article class="strength-item">
-            <span class="number">02</span>
-            <div class="round-icon">
-              <svg viewBox="0 0 48 48" aria-hidden="true">
-                <path d="M24 42a18 18 0 1 0 0-36 18 18 0 0 0 0 36ZM24 34a10 10 0 1 0 0-20 10 10 0 0 0 0 20ZM24 24l11-11M34 8h6v6" />
-              </svg>
-            </div>
-            <div>
-              <h3>高校生の行動に寄り添ったサービス設計</h3>
-              <p>自己理解から学校比較、資料請求、オープンキャンパス予約まで。進路選択の各ステップに自然な接点を創出しています。</p>
-            </div>
-          </article>
+      <article class="step c6">
+        <div class="step-no">6</div>
+        <div class="step-copy">
+          <h3>オープンキャンパス</h3>
+          <p>実際に学校を見学し、<br>理解を深める</p>
+        </div>
+        <svg class="mini-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="5" y="7" width="22" height="20" rx="2"></rect>
+          <path d="M10 4v6M22 4v6M5 13h22"></path>
+          <path d="M10 18h4M18 18h4M10 23h4"></path>
+        </svg>
+      </article>
 
-          <article class="strength-item">
-            <span class="number">03</span>
-            <div class="round-icon">
-              <svg viewBox="0 0 48 48" aria-hidden="true">
-                <path d="M10 39h28M14 35V24h6v11M23 35V17h6v18M32 35V10h6v25M12 17l8-6 8 4 9-8" />
-              </svg>
-            </div>
-            <div>
-              <h3>高い閲覧頻度とエンゲージメント</h3>
-              <p>進路を真剣に考えるタイミングで利用されるため、一般的な広告媒体よりも高い関心度が期待できます。</p>
-            </div>
-          </article>
+      <article class="step c7">
+        <div class="step-no">7</div>
+        <div class="step-copy">
+          <h3>出願検討</h3>
+          <p>志望校を決定し、<br>出願を検討する</p>
+        </div>
+        <svg class="mini-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M8 27V5"></path>
+          <path d="M8 7h17l-3 6 3 6H8"></path>
+        </svg>
+      </article>
+    </section>
 
-          <article class="strength-item">
-            <span class="number">04</span>
-            <div class="round-icon">
-              <svg viewBox="0 0 48 48" aria-hidden="true">
-                <path d="M13 8h22v32H13zM35 13h5v27h-5M28 24h3" />
-              </svg>
-            </div>
-            <div>
-              <h3>進路選択の入り口から接点を持つプラットフォーム</h3>
-              <p>進路ナビは、学校探しのためだけに利用されるサービスではありません。「分野探究」や「進路TV」を通じて、高校生が将来を考え始める段階から継続的な接点を創出できます。</p>
-            </div>
-          </article>
-        </section>
-      </section>
+    <section class="phase green">
+      <div><strong>認知・興味形成フェーズ</strong><span>将来や進路に興味を持ち、情報を集め始める時期</span></div>
+    </section>
+    <section class="phase blue">
+      <div><strong>比較・検討フェーズ</strong><span>学校や分野を比較し、志望校の検討を進める時期</span></div>
+    </section>
+    <section class="phase orange">
+      <div><strong>行動フェーズ</strong><span>具体的なアクションを起こす時期</span></div>
+    </section>
+    <section class="phase yellow">
+      <div><strong>来校・出願検討フェーズ</strong><span>来校・出願へ</span></div>
+    </section>
 
-      <section class="metrics" aria-label="利用実績">
-        <article>
-          <div class="metric-icon">
-            <svg viewBox="0 0 48 48" aria-hidden="true">
-              <path d="M16 21a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM32 21a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM8 39v-5c0-6 4-10 10-10h12c6 0 10 4 10 10v5" />
-            </svg>
-          </div>
-          <div>
-            <p>接触高校生数 <span>（年間）</span></p>
-            <strong><small>約</small>120<span>万人</span></strong>
-          </div>
-        </article>
-        <article>
-          <div class="metric-icon">
-            <svg viewBox="0 0 48 48" aria-hidden="true">
-              <path d="M11 37h26M15 34V16l9-5 9 5v18M20 34V23h8v11M33 18h7v16M8 34V22h7" />
-            </svg>
-          </div>
-          <div>
-            <p>ガイダンス開催数 <span>（年間）</span></p>
-            <strong><small>約</small>3,000<span>件</span></strong>
-          </div>
-        </article>
-        <article>
-          <div class="metric-icon">
-            <svg viewBox="0 0 48 48" aria-hidden="true">
-              <path d="M16 21a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM32 21a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM8 39v-5c0-6 4-10 10-10h12c6 0 10 4 10 10v5" />
-            </svg>
-          </div>
-          <div>
-            <p>進路ナビの年間利用者数</p>
-            <strong><small>約</small>293<span>万人</span></strong>
-          </div>
-        </article>
-        <article>
-          <div class="metric-icon">
-            <svg viewBox="0 0 48 48" aria-hidden="true">
-              <path d="M14 26a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM5 41v-3c0-6 4-10 9-10s9 4 9 10v3M28 8h13v17H31l-6 6V11c0-2 1-3 3-3ZM32 16h1M36 16h1" />
-            </svg>
-          </div>
-          <div>
-            <p>進路ナビで進路を聞いた高校生 <span>（年間）</span></p>
-            <strong><small>約</small>80<span>万人</span></strong>
-          </div>
-        </article>
-      </section>
+    <section class="products-grid" aria-label="進路ナビの接点・商品">
+      <article class="product c2">
+        <div class="product-title title">
+          <span class="badge" style="background: var(--green)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5c3-2 5-2 8 0v13c-3-2-5-2-8 0z"></path><path d="M12 6.5c3-2 5-2 8 0v13c-3-2-5-2-8 0z"></path></svg>
+          </span>
+          分野探究
+        </div>
+        <div class="visual sheetlets"><div class="sheetlet"><div class="pie"></div></div></div>
+        <p>学問・仕事のつながりを知り、<br>興味のきっかけをつくる<br>ワークシート教材</p>
+      </article>
 
-      <footer class="bottom-band">
-        ライセンスアカデミーのリアル接点 × 進路ナビのデジタル接点で、高校生の進路選択を強力にサポートします。
-      </footer>
-    </main>
-  </body>
+      <article class="product c2">
+        <div class="product-title title">
+          <span class="badge" style="background: var(--green)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M10 9l5 3-5 3z"></path></svg>
+          </span>
+          進路TV
+        </div>
+        <div class="visual"><div class="video-scene"></div></div>
+        <p>進学や仕事に関する動画を<br>いつでも視聴できる<br>動画コンテンツ</p>
+      </article>
+
+      <article class="product c2">
+        <div class="product-title title">
+          <span class="badge" style="background: var(--green)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M5 20c1.4-5.5 12.6-5.5 14 0"></path></svg>
+          </span>
+          適性・適職診断
+        </div>
+        <div class="visual"><div class="phone" style="--line-color: #12a48f"><div class="screen"><div class="phone-lines"><i></i><i></i><i></i></div><div class="radar"></div></div></div></div>
+        <p>性格や興味から自分に合った<br>学び・仕事を見つける<br>自己分析ツール</p>
+      </article>
+
+      <article class="product c4">
+        <div class="product-title title">
+          <span class="badge" style="background: var(--blue-2)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="2"></rect><path d="M9 8h6M9 12h6M9 16h3"></path></svg>
+          </span>
+          WEB希望調査
+        </div>
+        <div class="visual"><div class="phone small-phone" style="--line-color: #2f6ed8"><div class="screen"><div class="phone-lines"><i></i><i></i><i></i></div></div></div></div>
+        <p>ガイダンス参加時に実施。<br>進路意識の高い高校生へ<br>直接アプローチ</p>
+      </article>
+
+      <article class="product c4">
+        <div class="product-title title">
+          <span class="badge" style="background: var(--blue-2)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"></circle><path d="M15 15l5 5"></path></svg>
+          </span>
+          学校検索
+        </div>
+        <div class="visual"><div class="phone small-phone search-phone" style="--line-color: #2f6ed8"><div class="screen"><div class="photo"></div><div class="phone-lines"><i></i><i></i></div></div></div></div>
+        <p>学校・分野・エリアなど<br>多様な軸で検索でき、<br>比較検討をサポート</p>
+      </article>
+
+      <article class="product c4">
+        <div class="product-title title">
+          <span class="badge" style="background: var(--blue-2)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="12" rx="2"></rect><path d="M8 20h8M10 17v3M14 17v3"></path></svg>
+          </span>
+          進路ナビ内<br>リスティング広告
+        </div>
+        <div class="visual"><div class="phone listing-phone" style="--line-color: #2f6ed8"><div class="screen"><div class="adline"></div><div class="adline"></div><div class="adline"></div><div class="phone-lines"><i></i><i></i></div></div></div></div>
+        <p>能動的に情報を探している<br>高校生へ効果的に<br>アプローチ</p>
+      </article>
+
+      <article class="product action c7">
+        <div class="stack-card">
+          <div class="product-title title">
+            <span class="badge" style="background: var(--orange)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10l2 3h4v9H4z"></path></svg>
+            </span>
+            資料請求
+          </div>
+          <div class="visual"><div class="phone small-phone" style="--line-color: #f47721"><div class="screen"><div class="phone-lines"><i></i><i></i><i></i></div></div></div></div>
+          <p>気になる学校の資料を<br>手軽に請求できる<br>導線を提供</p>
+        </div>
+        <div class="stack-card">
+          <div class="product-title title">
+            <span class="badge" style="background: var(--orange)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8l4-2v12l-4-2z"></path><rect x="9" y="7" width="10" height="10" rx="2"></rect></svg>
+            </span>
+            動画制作
+          </div>
+          <div class="thumb school"></div>
+          <p>学校の魅力を伝える<br>動画を企画・制作し、<br>理解促進をサポート</p>
+        </div>
+      </article>
+
+      <article class="product action c7">
+        <div class="stack-card">
+          <div class="product-title title">
+            <span class="badge" style="background: var(--orange)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"></rect><path d="M8 2v6M16 2v6M4 10h16"></path></svg>
+            </span>
+            オープンキャンパスナビ
+          </div>
+          <div class="visual dual">
+            <div class="phone small-phone search-phone" style="--line-color: #f47721"><div class="screen"><div class="photo"></div><div class="phone-lines"><i></i><i></i></div></div></div>
+            <div class="phone small-phone" style="--line-color: #f47721"><div class="screen"><div class="phone-lines"><i></i><i></i><i></i></div></div></div>
+          </div>
+          <p>学校のイベント情報を<br>検索・比較し、<br>予約までサポート</p>
+        </div>
+        <div class="stack-card">
+          <div class="product-title title">
+            <span class="badge" style="background: var(--orange)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 16 0"></path><path d="M8 12a4 4 0 0 1 8 0"></path><path d="M12 12v7"></path></svg>
+            </span>
+            Live配信
+          </div>
+          <div class="thumb live"></div>
+          <p>リアルタイムでの情報提供や<br>学校説明でエンゲージメントを<br>高める</p>
+        </div>
+      </article>
+
+      <article class="product last">
+        <div class="journey-graphic" aria-hidden="true">
+          <div class="school-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V8l6-4 6 4v12"></path><path d="M9 11h2M13 11h2M9 15h2M13 15h2"></path></svg>
+          </div>
+          <div class="people-icon">
+            <svg viewBox="0 0 70 34"><circle cx="35" cy="9" r="5" class="solid"></circle><circle cx="20" cy="14" r="4" class="solid"></circle><circle cx="50" cy="14" r="4" class="solid"></circle><path d="M24 31c1-9 21-9 22 0" stroke-width="4"></path><path d="M9 31c1-7 16-7 17 0" stroke-width="4"></path><path d="M44 31c1-7 16-7 17 0" stroke-width="4"></path></svg>
+          </div>
+        </div>
+        <div class="journey">
+          <p>オープンキャンパス参加や<br>学校理解の深化を経て、<br>出願・進学を検討</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="matrix" aria-label="商品マップ">
+      <div class="matrix-phases">
+        <div class="blank"></div>
+        <div class="g">認知・興味形成フェーズ</div>
+        <div class="b">比較・検討フェーズ</div>
+        <div class="o">行動フェーズ</div>
+        <div class="y">来校・出願検討フェーズ</div>
+      </div>
+      <div class="matrix-row">
+        <div class="row-label">高校生の行動</div>
+        <div>将来への興味</div>
+        <div>関心を持つ</div>
+        <div>自分を理解する</div>
+        <div>学校・分野を調べる</div>
+        <div></div>
+        <div>比較・検討する</div>
+        <div>資料を取り寄せる</div>
+        <div>オープンキャンパスに参加する</div>
+        <div>学校理解を深める<br>出願を検討する</div>
+      </div>
+      <div class="matrix-row">
+        <div class="row-label">接点の目的</div>
+        <div></div>
+        <div>興味のきっかけづくり</div>
+        <div>自己理解の促進</div>
+        <div>情報提供による<br>検討の促進</div>
+        <div></div>
+        <div>比較検討の支援</div>
+        <div>アクションの促進</div>
+        <div>来校の後押し</div>
+        <div>理解促進<br>出願意欲の醸成</div>
+      </div>
+      <div class="matrix-row">
+        <div class="row-label">関連商品</div>
+        <div class="badges">
+          <span class="tiny"><span class="dot" style="background: var(--blue)"><svg viewBox="0 0 24 24"><path d="M4 6.5c3-2 5-2 8 0v13c-3-2-5-2-8 0z"></path><path d="M12 6.5c3-2 5-2 8 0v13c-3-2-5-2-8 0z"></path></svg></span>関連商品</span>
+        </div>
+        <div class="badges">
+          <span class="tiny"><span class="dot" style="background: var(--green)"><svg viewBox="0 0 24 24"><path d="M4 6.5c3-2 5-2 8 0v13c-3-2-5-2-8 0z"></path><path d="M12 6.5c3-2 5-2 8 0v13c-3-2-5-2-8 0z"></path></svg></span>分野探究</span>
+          <span class="tiny"><span class="dot" style="background: var(--green)"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M10 9l5 3-5 3z"></path></svg></span>進路TV</span>
+        </div>
+        <div class="badges">
+          <span class="tiny"><span class="dot" style="background: var(--green)"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M5 20c1.4-5.5 12.6-5.5 14 0"></path></svg></span>適性・適職診断</span>
+        </div>
+        <div class="badges">
+          <span class="tiny"><span class="dot" style="background: var(--blue-2)"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2"></rect><path d="M9 8h6M9 12h6M9 16h3"></path></svg></span>WEB希望調査</span>
+        </div>
+        <div class="badges">
+          <span class="tiny"><span class="dot" style="background: var(--blue-2)"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"></circle><path d="M15 15l5 5"></path></svg></span>学校検索</span>
+        </div>
+        <div class="badges">
+          <span class="tiny"><span class="dot" style="background: var(--blue-2)"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"></rect><path d="M8 20h8M10 17v3M14 17v3"></path></svg></span>進路ナビ内<br>リスティング広告</span>
+        </div>
+        <div class="badges">
+          <span class="tiny"><span class="dot" style="background: var(--orange)"><svg viewBox="0 0 24 24"><path d="M4 7h10l2 3h4v9H4z"></path></svg></span>資料請求</span>
+        </div>
+        <div class="badges">
+          <span class="tiny"><span class="dot" style="background: var(--orange)"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"></rect><path d="M8 2v6M16 2v6M4 10h16"></path></svg></span>オープンキャンパスナビ</span>
+          <span class="tiny"><span class="dot" style="background: var(--orange)"><svg viewBox="0 0 24 24"><path d="M5 8l4-2v12l-4-2z"></path><rect x="9" y="7" width="10" height="10" rx="2"></rect></svg></span>動画制作</span>
+          <span class="tiny"><span class="dot" style="background: var(--orange)"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0"></path><path d="M8 12a4 4 0 0 1 8 0"></path><path d="M12 12v7"></path></svg></span>Live配信</span>
+        </div>
+        <div class="badges">
+          <span class="tiny"><span class="dot" style="background: var(--orange)"><svg viewBox="0 0 24 24"><path d="M5 8l4-2v12l-4-2z"></path><rect x="9" y="7" width="10" height="10" rx="2"></rect></svg></span>動画制作</span>
+          <span class="tiny"><span class="dot" style="background: var(--orange)"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0"></path><path d="M8 12a4 4 0 0 1 8 0"></path><path d="M12 12v7"></path></svg></span>Live配信</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <svg class="students" viewBox="0 0 136 78" aria-hidden="true">
+        <g stroke="#003f9a" stroke-width="2">
+          <path d="M22 74V54c0-11 23-11 23 0v20" fill="#d9f0ff"></path>
+          <circle cx="34" cy="31" r="13" fill="#fff"></circle>
+          <path d="M20 29c6-15 23-14 29 0c-5-3-10-2-14-9c-3 6-8 7-15 9z" fill="#003f9a"></path>
+          <path d="M29 46l5 7l5-7"></path>
+          <path d="M34 53v21"></path>
+          <path d="M14 74h40"></path>
+          <path d="M81 74V53c0-12 25-12 25 0v21" fill="#d9f0ff"></path>
+          <circle cx="94" cy="30" r="13" fill="#fff"></circle>
+          <path d="M79 31c3-17 27-18 30 0c-7-1-11-4-16-10c-3 7-8 9-14 10z" fill="#003f9a"></path>
+          <path d="M89 45l5 7l5-7"></path>
+          <path d="M94 52v22"></path>
+          <path d="M72 74h43"></path>
+        </g>
+      </svg>
+      <div class="footer-title">進路ナビは広告媒体ではありません。</div>
+      <div class="footer-copy">
+        高校生が進路を考え始める瞬間から、<br>
+        進学先を決定するまでを支援する<br>
+        進路選択プラットフォームです。
+      </div>
+      <ul class="check-list">
+        <li><span class="check"><svg viewBox="0 0 16 16"><path d="M4 8.5l2.5 2.5L12 5"></path></svg></span>進路検討のあらゆる段階で高校生と自然に接点を創出</li>
+        <li><span class="check"><svg viewBox="0 0 16 16"><path d="M4 8.5l2.5 2.5L12 5"></path></svg></span>効果的なタイミングで最適な情報・サービスを提供</li>
+        <li><span class="check"><svg viewBox="0 0 16 16"><path d="M4 8.5l2.5 2.5L12 5"></path></svg></span>高校生の行動に寄り添い、進路決定までを一気通貫でサポート</li>
+      </ul>
+    </footer>
+  </main>
+</body>
 </html>
